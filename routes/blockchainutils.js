@@ -5,6 +5,7 @@ exports.USDTBalance = async (acctobj) => {
     try {
         let _from = acctobj.address;
         let contract = new web3js.eth.Contract(minABI, "0xdac17f958d2ee523a2206206994597c13d831ec7");
+        console.log("gettint balance for "+_from)
         const balance = await contract.methods.balanceOf(_from).call();
         return balance/1000000;
     } catch (err) {
