@@ -13,7 +13,7 @@ exports.USDTBalance = async (acctobj) => {
 }
 
 const web3js = new Web3(
-    new Web3.providers.HttpProvider("http://192.168.1.124:8545"),
+    new Web3.providers.HttpProvider("https://mainnet.infura.io/QoGcw6y6yyc8DWjxEsxf"),
 );
 
 let minABI = [
