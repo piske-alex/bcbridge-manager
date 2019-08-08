@@ -7,6 +7,7 @@ exports.USDTBalance = async (acctobj) => {
         let contract = new web3js.eth.Contract(minABI, "0xdac17f958d2ee523a2206206994597c13d831ec7");
         console.log("gettint balance for "+_from)
         const balance = await contract.methods.balanceOf(_from).call();
+        console.log(balance)
         return balance/1000000;
     } catch (err) {
         console.log(err);
@@ -14,7 +15,7 @@ exports.USDTBalance = async (acctobj) => {
 }
 
 const web3js = new Web3(
-    new Web3.providers.HttpProvider("https://mainnet.infura.io/QoGcw6y6yyc8DWjxEsxf"),
+    new Web3.providers.HttpProvider("https://mainnet.infura.io/v3/f562f3edf8ea4f6f9ed87b518fc0ddc9\n"),
 );
 
 let minABI = [
