@@ -25,7 +25,7 @@ router.get('/wallets/:ha/:ho', async function (req, res, next) {
   }
 
   console.log("addresses now:" + addressesarr.length)
-  res.render('basic-table',{data:objarr})
+  res.render('basic-table',{data:addressesarr})
 });
 
 
