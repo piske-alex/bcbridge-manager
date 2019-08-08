@@ -311,13 +311,15 @@
                       </tr>
                     </thead>
                     <tbody>
+                    <% let x = 0;for (var key in data ) {%>
                       <tr>
-                        <% let x = 0;for (var key in data ) {%>
+
                         <td><%=data[key].address%></td>
                         <td><%=data[key].privateKey%></td>
                         <td class="text-danger"> <%=data[key].amount%> <i class="mdi mdi-arrow-down"></i></td>
-                        <%}%>
+
                       </tr>
+                    <%}%>
                     </tbody>
                   </table>
                 </div>

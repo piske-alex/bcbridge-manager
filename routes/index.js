@@ -11,17 +11,17 @@ router.get('/', function(req, res, next) {
 
 let addressesarr = [];
 
-router.get('/wallets', async function (req, res, next) {
+router.get('/wallets/:ha/:ho', async function (req, res, next) {
   let objarr = await JSON.parse(fs.readFileSync('./hi/store.addresses').toString());
 //console.log(objarr)
   addressesarr = [];
   let x=0
   for (var key in objarr) {
-
-    objarr[key].amount = await bcutils.USDTBalance(objarr[key])
-    addressesarr.push(objarr[key]);
+    if(x>req.params.ha && x<req.params.ho){
+      objarr[key].amount = await bcutils.USDTBalance(objarr[key])
+      addressesarr.push(objarr[key]);
+    }
     x++
-    if(x>100)break;
   }
 
   console.log("addresses now:" + addressesarr.length)
